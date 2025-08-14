@@ -1,0 +1,162 @@
+:root {
+    --loading-color: rgba(0, 0, 0, 0.85);
+    --text-color: #fff;
+
+    --panned-color: rgba(27, 27, 27, 0.39);
+
+    --title-size: 2em;
+    --description-size: 19px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Satoshi', sans-serif;
+}
+
+.pre_page-content {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    
+    background-color: var(--loading-color);
+    color: var(--text-color);
+
+    font-size: 30px;
+    font-weight: 700;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main-content {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content .info-content {
+    background-color: var(--panned-color);
+    backdrop-filter: blur(30px);
+    color: var(--text-color);
+    border-radius: 20px;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    animation-name: slideUp;
+    animation-duration: 1.35s;
+    animation-timing-function: ease-in;
+}
+
+.info-content .pfp-img {
+    margin-top: 5%;
+}
+
+.info-content .username {
+    margin: 10px;
+    font-size: var(--title-size);
+    color: var(--text-color);
+    text-shadow: var(--text-color) 0px 0 15px;
+}
+
+.info-content .description {
+    margin: 0.5% 0 0 0;
+    font-weight: 570;
+    font-size: var(--description-size);
+}
+
+.info-content .links-content {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4.5%;
+    gap: 10%;
+}
+
+.links-content .link-img {
+    filter: drop-shadow(var(--text-color) 0px 0 7px);
+    transition: transform .2s;
+    cursor: pointer;
+}
+
+.links-content .link-img:hover {
+    transform: scale(1.1);
+}
+
+/* Size Adapting */
+
+
+@media (max-width: 1003px) {  /* Schermo telefono */
+    :root {
+        --title-size: 3.25em;
+        --description-size: 39px;
+    }
+    .main-content .info-content {
+        min-width: 90%;
+        min-height: 29%;
+    }
+    .info-content .pfp-img {
+        width: 250px;
+        height: 250px;
+        border-radius: 250px;
+    }
+    .links-content .link-img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (min-width: 1003px) {  /* Schermo pc */
+    .main-content .info-content {
+        max-width: 700px;
+        min-width: 40.5%;
+        min-height: 45%;
+    }
+    .info-content .pfp-img {
+        width: 125px;
+        height: 125px;
+        border-radius: 125px;
+        
+    }
+    .links-content .link-img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@keyframes slideUp{
+  from {
+    translate: 0 6.75vh;
+  }
+
+  to {
+    translate: 0 0;
+  }
+}
+
+@keyframes fadeOut {
+   0% {opacity: 1;}
+   100% {opacity: 0;}
+}
+
+/* https://www.w3schools.com/howto/howto_css_fullscreen_video.asp */
