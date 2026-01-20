@@ -9,9 +9,9 @@ function openPage() {
     document.getElementById('pre-page').style.animationFillMode = 'both';
 
     document.getElementById('video-background').play();
-    document.getElementById('audio-background').play();
     document.getElementById('main-content').style.display = 'flex';
     setTimeout(() => {
         document.getElementById('pre-page').style.display = 'none';
     }, "2250");
 }
+
