@@ -1,5 +1,4 @@
 document.getElementById('video-background').load();
-document.getElementById('audio-background').load();
 
 // Start Video Playback
 function openPage() {
@@ -14,4 +13,5 @@ function openPage() {
         document.getElementById('pre-page').style.display = 'none';
     }, "2250");
 }
+
 
